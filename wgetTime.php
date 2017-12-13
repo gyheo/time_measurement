@@ -1,5 +1,6 @@
 <?php
-	$pages = ["Input your test file e.g) index.html"];
+	// Input your test file as a array
+	$pages = ["e.g) index.html"];
 
 	// loop counts
 	$loop = 30;
