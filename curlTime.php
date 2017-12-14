@@ -2,10 +2,10 @@
 	// Input your test file as a array
 	$pages = ["e.g) index.html"];
 
-	// loop count if you want
+	// Loop count
 	$loop = 30;
 
-	// file name
+	// File name check
 	if(strlen($argv[1]) == 0){
 		echo 'There is no file name! '.PHP_EOL;
 		exit;
@@ -18,9 +18,8 @@
 	// test code
 	// $command = "curl -o /dev/null -s -w %{time_total}\\n https://192.9.81.204/{$pages[0]}";
 
-	/**/
 	foreach($pages as $page){
-		// save wget content output as a file
+		// Allocate the array
 		for($i=0; $i < $loop; $i++){
 			if(!isset($eachSec[$page])) {
 				$eachSec[$page] = [];
@@ -32,6 +31,7 @@
 			$sec = shell_exec($command);
 			$result .= $sec . ' ';
 			echo $sec . ' ';
+
 			// test code
 			// echo $statement;
 
