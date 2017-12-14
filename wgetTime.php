@@ -2,10 +2,10 @@
 	// Input your test file as a array
 	$pages = ["e.g) index.html"];
 
-	// loop counts
+	// Loop counts
 	$loop = 30;
 
-	// file name
+	// File name
 	if(strlen($argv[1]) == 0){
 		echo 'There is no file name! '.PHP_EOL;
 		exit;
@@ -16,7 +16,7 @@
 	$eachSec = [];
 
 	foreach($pages as $page){
-		// save wget content output as a file
+		// Allocate the array
 		for($i=0; $i < $loop; $i++){
 			if(!isset($eachSec[$page])) {
 				$eachSec[$page] = [];
@@ -27,6 +27,7 @@
 
 			$statement = shell_exec($command);
 			$result .= $statement;
+
 			// test code
 			// echo $statement;
 
