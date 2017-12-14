@@ -27,7 +27,7 @@
 			}
 
 			// Input the commands for curl
-			$command = "curl -o /dev/null -s -w %{time_total}  http://192.9.81.204/{$page}";
+			$command = "curl -o /dev/null -s -w %{time_total}  http://serverIP address/{$page}";
 
 			$sec = shell_exec($command);
 			$result .= $sec . ' ';
