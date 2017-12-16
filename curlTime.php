@@ -14,7 +14,8 @@
 	$result = '';
 	$statement = '';
 	$eachSec = [];
-
+	// $elements = '';
+	// $total_sec = 0;
 	// test code
 	// $command = "curl -o /dev/null -s -w %{time_total}\\n https://192.9.81.204/{$pages[0]}";
 
@@ -27,8 +28,18 @@
 
 			// Input the commands for curl
 			$command = "curl -o /dev/null -s -w %{time_total}  http://serverIP address/{$page}";
+			// Except connection time
+			// $command = "curl -o /dev/null -s -w '%{time_total} %{time_starttransfer}' http://serverIP address/{$page}";
 
 			$sec = shell_exec($command);
+
+			// When you want to measure the download time except connection, use this
+			/*
+			$values = shell_exec($command);
+			$elements = explode(" ", $values);
+
+			$total_sec = floatval($elements[0]) - floatval($elements[1]);
+			*/
 			$result .= $sec . ' ';
 			echo $sec . ' ';
 
