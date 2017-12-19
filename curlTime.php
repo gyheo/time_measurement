@@ -38,6 +38,7 @@
 			$values = shell_exec($command);
 			$elements = explode(" ", $values);
 
+			// It only caculates the response time 
 			$total_sec = floatval($elements[0]) - floatval($elements[1]);
 			*/
 			$result .= $sec . ' ';
